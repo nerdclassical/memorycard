@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    background-color: #BED2E9;
+}
+
+.navbar{
+    width: 100%;
+    height: 100px;
+    background-color: #82B6DB;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;  
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.logoImage{
+    width: 70px;
+    height: 70px;
+    background-color: #4C97CD;
+    border-radius: 100px;
+    margin-left: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: aliceblue;
+}
+
+.buttons {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 90px;
+    gap: 50px;
+}
+
+input {
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.login{
+    background-color: #397FB2;
+    border: 2px solid rgb(14, 51, 51);
+    border-radius: 20px;
+    width: 100px;
+    height: 50px;
+    box-shadow: 3px 4px #2C6188;
+}
+
+.register {
+    background: none;
+    border: none;
+}
+
+.login:hover {
+    cursor: pointer;
+    transform: translate(2px, 3px);
+    box-shadow: 0px 0px;
+
+}
+.register:hover {
+    cursor: pointer;
+}
+
