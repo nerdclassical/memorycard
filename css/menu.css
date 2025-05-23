@@ -74,16 +74,45 @@ body {
 .select-wrapper select:focus {
   outline: none;
 }
+.logout {
+  background-color: brown;
+}
 
+option {
+  background-color: rgb(22, 71, 71); 
+  color: white; 
+}
 
-  
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.cardGame{
+    margin-top: 2%;
+    width: 80%;
+    height: 250px;
+    background-color: #82B6DB;
+    font-size: 41px;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+}
 
-  .logout {
-    background-color: brown;
-  }
+.cardRanking {
+    margin-top: 1%;
+    width: 80%;
+    height: 250px;
+    background-color: #82B6DB;
+    font-size: 41px;
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+}
 
-  option {
-    background-color: rgb(22, 71, 71); 
-    color: white; 
-  }
+.cardGame .text, .cardRanking .text{
+    margin-left: 60px;
+    margin-right: 60px;
+}
