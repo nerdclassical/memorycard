@@ -87,3 +87,53 @@ option {
   background-color: #d3d6da; 
   color: black; 
 }
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.infomationsPart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 25px;
+    gap: 100px;
+}
+
+.theme {
+  display: flex;
+  border: 3px solid black;
+  border-radius: 12px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.btnTheme {
+  padding: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btnTheme img {
+  width: 35px;
+  height: 35px;
+  pointer-events: none; /* para o clique passar direto pro botão */
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+
+
+
