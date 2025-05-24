@@ -8,7 +8,7 @@
     bordeborder-bottom-right-radius: ;20px
     ent="width=device-width, initial-scale=1.0">
     <title>Memory Card</title>
-    <link rel="stylesheet" href="../css/tutorial.css">
+    <link rel="stylesheet" href="../css/configuration.css">
 </head>
 <body>
     <div class="navbar">
@@ -24,5 +24,42 @@
             </div>
         </div>
     </div>
+
+    <section>
+        <div class="firstSelect">
+            <div class="text">Quantas quartas você quer jogar?</div>
+            <select name="" id="selectOne">
+                <option value="chooseNumber">Escolha</option>
+                <option value="number6">8</option>
+                <option value="number8">12</option>
+                <option value="number12">16</option>
+            </select>
+        </div>
+        <div class="secondSelect">
+            <div class="text">Escolha seu nível de dificuldade:</div>
+            <select name="" id="selectTwo">
+                <option value="chooseDificult">Escolha</option>
+                <option value="easy">Facil</option>
+                <option value="dificult">Difícil</option>
+            </select>
+        </div>
+        <div class="thirdSelect">
+            <div class="text">Prefere tema claro ou escuro?</div>
+            <select name="" id="selectThree">
+                <option value="chooseTheme">Escolha</option>
+                <option value="lightTheme">Claro</option>
+                <option value="blackTheme">Escuro</option>
+            </select>
+        </div>
+
+        <div class="buttonsPart">
+            <div class="subtext">
+            Para iniciar o jogo, basta inserir os dados e clicar em “Começar”
+        </div>
+        <input type="button" value="COMEÇAR" class="buttonsPlay">
+        <input type="button" onclick="window.location.href='menu.html';" class="buttonBack" value="Voltar">
+        </div>
+        
+    </section>
 </body>
 </html>
