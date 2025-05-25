@@ -1,70 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" contbody {
-    margin: 0;
-}
-    bordeborder-bottom-right-radius: ;20px
-    ent="width=device-width, initial-scale=1.0">
-    <title>Memory Card</title>
-    <link rel="stylesheet" href="../css/configuration.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurar Jogo</title>
+  <link rel="stylesheet" href="../css/configuration.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <div class="logoImage">Logo</div>
-        </div>
-        <div class="buttons">
-            <div class="buttonsNav">
-                <input type="button" onclick="window.location.href='menu.html';" class="navButton" value="Início">
-                <input type="button" onclick="window.location.href='configuration.html';" class="navButton" value="Criar Jogo">
-                <input type="button" onclick="window.location.href='configuration.html';" class="navButton" value="Ranking">
-            </div>
-            <div class="select-wrapper">
-                <select id="userActions">
-                    <option value="user">Nome do usuário</option>
-                    <option class="logout" value="logout">Sair</option>
-                </select>
-            </div>
-        </div>
+  <div class="navbar">
+    <div class="logo">
+      <div class="logoImage">Logo</div>
+    </div>
+    <div class="buttons">
+      <div class="buttonsNav">
+        <input type="button" onclick="window.location.href='menu.html';" class="navButton" value="Início">
+        <input type="button" onclick="window.location.href='configuration.html';" class="navButton" value="Criar Jogo">
+        <input type="button" onclick="window.location.href='ranking.html';" class="navButton" value="Ranking">
+      </div>
+      <div class="select-wrapper">
+        <select id="userActions">
+          <option value="user">Nome do usuário</option>
+          <option class="logout" value="logout">Sair</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="firstSelect">
+      <div class="text">Quantas cartas você quer jogar?</div>
+      <select id="selectOne">
+        <option value="">Escolha</option>
+        <option value="8">8</option>
+        <option value="12">12</option>
+        <option value="16">16</option>
+      </select>
     </div>
 
-    <section>
-        <div class="firstSelect">
-            <div class="text">Quantas quartas você quer jogar?</div>
-            <select name="" id="selectOne">
-                <option value="chooseNumber">Escolha</option>
-                <option value="number6">8</option>
-                <option value="number8">12</option>
-                <option value="number12">16</option>
-            </select>
-        </div>
-        <div class="secondSelect">
-            <div class="text">Escolha seu nível de dificuldade:</div>
-            <select name="" id="selectTwo">
-                <option value="chooseDificult">Escolha</option>
-                <option value="easy">Facil</option>
-                <option value="dificult">Difícil</option>
-            </select>
-        </div>
-        <div class="thirdSelect">
-            <div class="text">Prefere tema claro ou escuro?</div>
-            <select name="" id="selectThree">
-                <option value="chooseTheme">Escolha</option>
-                <option value="lightTheme">Claro</option>
-                <option value="blackTheme">Escuro</option>
-            </select>
-        </div>
+    <div class="secondSelect">
+      <div class="text">Escolha seu nível de dificuldade:</div>
+      <select id="selectTwo">
+        <option value="">Escolha</option>
+        <option value="easy">Fácil</option>
+        <option value="difficult">Difícil</option>
+      </select>
+    </div>
 
-        <div class="buttonsPart">
-            <div class="subtext">
-            Para iniciar o jogo, basta inserir os dados e clicar em “Começar”
-        </div>
-        <input type="button" onclick="window.location.href='game.html';" value="COMEÇAR" class="buttonsPlay">
-        <input type="button" onclick="window.location.href='menu.html';" class="buttonBack" value="Voltar">
-        </div>
+    <div class="thirdSelect">
+      <div class="text">Prefere tema claro ou escuro?</div>
+      <select id="selectThree">
+        <option value="">Escolha</option>
+        <option value="light">Claro</option>
+        <option value="dark">Escuro</option>
+      </select>
+    </div>
+
+    <div class="buttonsPart">
+      <div class="subtext">
+        Para iniciar o jogo, basta inserir os dados e clicar em “Começar”
+      </div>
+      <input type="button" onclick="iniciarJogo()" value="COMEÇAR" class="buttonsPlay">
+      <input type="button" onclick="window.location.href='menu.html';" class="buttonBack" value="Voltar">
+    </div>
+  </section>
+
+  <script>
+    function iniciarJogo() {
+        const cardCount = document.getElementById("selectOne").value;
+        const difficulty = document.getElementById("selectTwo").value;
+        const theme = document.getElementById("selectThree").value;
+
+        if(!cardCount || !difficulty || !theme) {
+            alert("Por favor, preencha todos os campos para iniciar o jogo do balacobaco!");
+            return;
+        } else {
+           localStorage.setItem('cardCount', cardCount);
+        localStorage.setItem('difficulty', difficulty);
+        localStorage.setItem('theme', theme);
+
+        window.location.href = 'game.html'; 
+        }
+
         
-    </section>
+    }
+
+    document.getElementById('userActions').addEventListener('change', function () {
+        if(this.value === 'logout') {
+            alert("Você saiu da sua conta :(");
+
+            window.location.href = 'index.html';
+        }
+    });
+  </script>
 </body>
 </html>
