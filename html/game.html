@@ -165,10 +165,20 @@ function handleCardClick(e) {
 
 
 
-
+// Inicia o cronômetro
+function startTimer() {
+  startTime = Date.now();
+  timerInterval = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - startTime) / 1000); // Segundos passados
+    const minutes = String(Math.floor(elapsed / 60)).padStart(2, "0");
+    const seconds = String(elapsed % 60).padStart(2, "0");
+    timerDisplay.textContent = `${minutes}:${seconds}`;  // Exibe no formato mm:ss
+  }, 1000);
+}
 
     // Aplica o tema escolhido
 generateCards();       // Cria as cartas
+startTimer();          // Inicia o cronômetro
 
 
   </script>
