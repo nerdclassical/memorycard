@@ -154,16 +154,24 @@ function handleCardClick(e) {
       }
     } else {
       // Se não forem iguais, desvira as cartas após um tempo
+      first.classList.add("incorrect");
+      second.classList.add("incorrect");
+
       setTimeout(() => {
-        first.classList.remove("flipped");
-        second.classList.remove("flipped");
+        first.classList.remove("flipped", "incorrect");
+        second.classList.remove("flipped", "incorrect");
         flippedCards = [];
       }, difficulty === "difficult" ? 500 : 1000);  // Tempo varia pela dificuldade
     }
   }
 }
 
-
+function showWinModal() {
+  clearInterval(timerInterval);  // Para o cronômetro
+  document.getElementById("finalAttempts").textContent = attempts;
+  document.getElementById("finalTime").textContent = timerDisplay.textContent;
+  document.getElementById("winModal").classList.add("active");  // Exibe o modal
+}
 
 // Inicia o cronômetro
 function startTimer() {

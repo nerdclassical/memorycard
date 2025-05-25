@@ -251,6 +251,11 @@ section {
   transform: rotateY(180deg);
 }
 
+.card.incorrect .back{
+  background-color: rgb(194, 35, 7);
+  color: white;
+}
+
 .card .front,
 .card .back {
   position: absolute;
