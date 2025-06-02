@@ -31,11 +31,11 @@
       <div class="attemps">Tentativas: <span id="attempts">0</span></div>
       <div class="time">Tempo: <span id="timer">00:00</span></div>
       <div class="theme">
-        <button id="lightTheme" class="btnTheme">
-          <img src="../assets/images/sunSelected.png" alt="Tema Claro" />
+        <button id="lightTheme" class="btnTheme selected">
+          <img id="sunIcon" src="../assets/images/sunSelected.png" alt="Tema Claro" />
         </button>
         <button id="darkTheme" class="btnTheme">
-          <img src="../assets/images/moonSelected.png" alt="Tema Escuro" />
+          <img id="moonIcon" src="../assets/images/moonSelected.png" alt="Tema Escuro" />
         </button>
       </div>
     </div>
@@ -67,6 +67,18 @@
     </div>
   </div>
 
+  <div class="modal" id="loseModal">
+    <div class="modal-content">
+      <h2>Tempo Esgotado!</h2>
+      <p>Infelizmente, o tempo acabou. Tente novamente.</p>
+      <div class="buttonsModal">
+        <button class="modal-btn" onclick="location.reload()">Tentar de novo</button>
+        <button class="modal-btn" onclick="window.location.href='menu.html'">Voltar ao menu</button>
+      </div>
+    </div>
+  </div>
+
+
   <script>
     // Referência aos elementos HTML usados no jogo
 const cardsPart = document.getElementById("cardsPart");
@@ -79,6 +91,7 @@ const timerDisplay = document.getElementById("timer");
 let cardCount = parseInt(localStorage.getItem("cardCount")) || 8;
 let difficulty = localStorage.getItem("difficulty") || "easy";
 let theme = localStorage.getItem("theme") || "light";
+
 
 // Variáveis de controle do jogo
 let flippedCards = [];         // Armazena as cartas viradas no momento
@@ -165,6 +178,46 @@ function handleCardClick(e) {
     }
   }
 }
+   const lightBtn = document.getElementById('lightTheme');
+  const darkBtn = document.getElementById('darkTheme');
+  const sunIcon = document.getElementById('sunIcon');
+  const moonIcon = document.getElementById('moonIcon');
+
+  function swapImage(imgElement, newSrc) {
+    imgElement.classList.add('fade-out');
+
+    setTimeout(() => {
+      imgElement.src = newSrc;
+      imgElement.classList.remove('fade-out');
+    }, 300); // Duração da transição no CSS
+  }
+
+  lightBtn.addEventListener('click', () => {
+    swapImage(sunIcon, '../assets/images/sunSelected.png');
+    swapImage(moonIcon, '../assets/images/moonSelected.png');
+
+    lightBtn.classList.add('selected');
+    darkBtn.classList.remove('selected');
+    document.body.classList.remove('dark-theme');
+  });
+
+  darkBtn.addEventListener('click', () => {
+    swapImage(sunIcon, '../assets/images/sunUnselect.png');
+    swapImage(moonIcon, '../assets/images/moonUnselect.png');
+
+    darkBtn.classList.add('selected');
+    lightBtn.classList.remove('selected');
+    document.body.classList.add('dark-theme');
+  });
+
+  if (theme === "dark") {
+    document.body.classList.add("dark-theme");
+    darkBtn.classList.add('selected');
+    lightBtn.classList.remove('selected');
+    sunIcon.src = '../assets/images/sunUnselect.png';
+    moonIcon.src = '../assets/images/moonUnselect.png';
+  }
+
 
 function showWinModal() {
   clearInterval(timerInterval);  // Para o cronômetro
@@ -175,14 +228,40 @@ function showWinModal() {
 
 // Inicia o cronômetro
 function startTimer() {
-  startTime = Date.now();
-  timerInterval = setInterval(() => {
-    const elapsed = Math.floor((Date.now() - startTime) / 1000); // Segundos passados
-    const minutes = String(Math.floor(elapsed / 60)).padStart(2, "0");
-    const seconds = String(elapsed % 60).padStart(2, "0");
-    timerDisplay.textContent = `${minutes}:${seconds}`;  // Exibe no formato mm:ss
-  }, 1000);
+  if (difficulty === "difficult") {
+    let timeLeft = 60;
+    timerDisplay.textContent = "01:00";
+
+    timerInterval = setInterval(() => {
+      timeLeft--;
+
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+      const seconds = String(timeLeft % 60).padStart(2, "0");
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        // Mostra o modal de derrota
+        document.getElementById("loseModal").classList.add("active");
+        // Evita que o jogador continue clicando
+        document.querySelectorAll(".card").forEach(card => {
+          card.removeEventListener("click", handleCardClick);
+        });
+      }
+    }, 1000);
+
+  } else {
+    // Timer normal (contando para cima)
+    startTime = Date.now();
+    timerInterval = setInterval(() => {
+      const elapsed = Math.floor((Date.now() - startTime) / 1000);
+      const minutes = String(Math.floor(elapsed / 60)).padStart(2, "0");
+      const seconds = String(elapsed % 60).padStart(2, "0");
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+    }, 1000);
+  }
 }
+
 
     // Aplica o tema escolhido
 generateCards();       // Cria as cartas
