@@ -24,16 +24,19 @@ body {
     flex-direction: row;
 }
 
-.logoImage{
+.logoImage {
     width: 70px;
     height: 70px;
-    background-color: #4C97CD;
     border-radius: 100px;
     margin-left: 40px;
     align-items: center;
     justify-content: center;
     display: flex;
     color: aliceblue;
+    background-image: url(../assets/images/logo.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .buttonsNav {
@@ -306,11 +309,6 @@ body.dark-theme {
 
 body.dark-theme .navbar {
   background-color: #2b2b2b;
-}
-
-body.dark-theme .logoImage {
-  background-color: #555;
-  color: #f0f0f0;
 }
 
 body.dark-theme .navButton {
