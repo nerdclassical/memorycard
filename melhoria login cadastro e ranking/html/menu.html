@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contbody {
+    margin: 0;
+}
+    bordeborder-bottom-right-radius: ;20px
+    ent="width=device-width, initial-scale=1.0">
+    <title>Memory Card</title>
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <div class="logoImage">Logo</div>
+        </div>
+        <div class="buttons">
+            <div class="buttonsNav">
+                <input type="button" onclick="window.location.href='menu.html';" class="navButton" value="Início">
+                <input type="button" onclick="window.location.href='configuration.html';" class="navButton" value="Criar Jogo">
+                <input type="button" onclick="window.location.href='configuration.html';" class="navButton" value="Ranking">
+            </div>
+            <div class="select-wrapper">
+                <select id="userActions">
+                    <option value="user">Nome do usuário</option>
+                    <option class="logout" value="logout">Sair</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="cardGame">
+            <div class="text">
+               <b>Jogo da memoria:</b> Concentre-se e use a sua memória para encontrar todos os pares neste jogo com níveis de dificuldade normal e dificil. 
+            </div>
+            <div class="buttonsGame">
+                <input type="button" onclick="window.location.href='configuration.html';"  value="Criar jogo" class="btGame">
+                <input type="button" onclick="window.location.href='tutorial.html';" value="Ver tutorial" class="btTutorial">
+            </div>
+        </div>
+
+        <div class="cardRanking">
+            <div class="text">
+               <b>Ranking:</b> Classificação do jogador em relação aos outros usuários  
+            </div>
+            <div class="buttonsRanking">
+                <input type="button" onclick="window.location.href='ranking.html';" value="Ver ranking" class="btRanking">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
