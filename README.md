@@ -95,4 +95,4 @@ MemoryCard é um site interativo criado por mim e meu colega com foco em jogos d
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/memorycard.git
+   git clone https://github.com/nerdclassical/memorycard.git
