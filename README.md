@@ -27,12 +27,12 @@ MemoryCard é um site interativo criado por mim e meu colega com foco em jogos d
 
 - `index.html` – Página inicial com botões de **Login** e **Register**
 - `login.html` – Formulário para fazer login
-- `register.html` – Formulário para registrar um novo usuário
+- `cadastro.html` – Formulário para registrar um novo usuário
 - `menu.html` – Tela principal após login, com opções do sistema
 - `tutorial.html` – Explicação visual e textual de como funciona o jogo
 - `ranking.html` – Exibe os resultados e pontuações
-- `criarJogo.html` – Configuração de novo jogo com personalizações
-- `jogo.html` – Local onde o jogo acontece de fato, com lógica de vitória/derrota
+- `configuration.html` – Configuração de novo jogo com personalizações
+- `game.html` – Local onde o jogo acontece de fato, com lógica de vitória/derrota
 
 ---
 
