@@ -35,12 +35,12 @@ MemoryCard é um site interativo criado por mim e meu colega com foco em jogos d
 - `game.html` – Local onde o jogo acontece de fato, com lógica de vitória/derrota
 
 ---
-/memorycard
-├── assets/
-│   └── images/
-│       ├── bxs--down-arrow.png
-│       ├── fundo_login.png
-│       ├── fundo_register.png
+/memorycard<br>
+├── assets/<br>
+│   └── images/<br>
+│       ├── bxs--down-arrow.png<br>
+│       ├── fundo_login.png<br>
+│       ├── fundo_register.png<br>
 │       ├── login_image.png
 │       ├── logo.jpeg
 │       ├── moonSelected.png
