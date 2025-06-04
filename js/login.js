@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (formCadastro) {
         // Página de Cadastro
         const btnEntrarAgora = document.querySelector('#form-cadastro .teladireita .button');
-        const btnCadastrar = document.querySelector('#form-cadastro .telaesquerda .button');
+        const btnCadastrar = document.querySelector('#form-cadastro .telaesquerda .buttonR');
         const container = document.querySelector('.container');
         
         btnEntrarAgora.addEventListener('click', function() {
