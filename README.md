@@ -35,46 +35,49 @@ MemoryCard é um site interativo criado por mim e meu colega com foco em jogos d
 - `game.html` – Local onde o jogo acontece de fato, com lógica de vitória/derrota
 
 ---
+
+## 📁 Organização dos arquivos
+
 /memorycard<br>
 ├── assets/<br>
 │   └── images/<br>
 │       ├── bxs--down-arrow.png<br>
 │       ├── fundo_login.png<br>
 │       ├── fundo_register.png<br>
-│       ├── login_image.png
-│       ├── logo.jpeg
-│       ├── moonSelected.png
-│       ├── moonUnselect.png
-│       ├── register_image.png
-│       ├── sunSelected.png
-│       ├── sunUnselect.png
-│       └── upscalemedia-transformed.png
-├── css/
-│   ├── index.css
-│   ├── login.css
-│   ├── cadastro.css
-│   ├── menu.css
-│   ├── tutorial.css
-│   ├── ranking.css
-│   ├── configuration.css
-│   └── game.css
-├── js/
-│   ├── index.js
-│   ├── login.js
-│   ├── cadastro.js
-│   ├── menu.js
-│   ├── tutorial.js
-│   ├── ranking.js
-│   ├── configuration.js
-│   └── game.js
-├── index.html
-├── login.html
-├── cadastro.html
-├── menu.html
-├── tutorial.html
-├── ranking.html
-├── configuration.html
-└── game.html
+│       ├── login_image.png<br>
+│       ├── logo.jpeg<br>
+│       ├── moonSelected.png<br>
+│       ├── moonUnselect.png<br>
+│       ├── register_image.png<br>
+│       ├── sunSelected.png<br>
+│       ├── sunUnselect.png<br>
+│       └── upscalemedia-transformed.png<br>
+├── css/<br>
+│   ├── index.css<br>
+│   ├── login.css<br>
+│   ├── cadastro.css<br>
+│   ├── menu.css<br>
+│   ├── tutorial.css<br>
+│   ├── ranking.css<br>
+│   ├── configuration.css<br>
+│   └── game.css<br>
+├── js/<br>
+│   ├── index.js<br>
+│   ├── login.js<br>
+│   ├── cadastro.js<br>
+│   ├── menu.js<br>
+│   ├── tutorial.js<br>
+│   ├── ranking.js<br>
+│   ├── configuration.js<br>
+│   └── game.js<br>
+├── index.html<br>
+├── login.html<br>
+├── cadastro.html<br>
+├── menu.html<br>
+├── tutorial.html<br>
+├── ranking.html<br>
+├── configuration.html<br>
+└── game.html<br>
 
 ---
 
