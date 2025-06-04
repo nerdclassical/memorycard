@@ -53,6 +53,20 @@ function shuffle(array) {
   }
 }
 
+
+function reshuffleUnmatchedCards() {
+  const unmatchedCards = Array.from(document.querySelectorAll('.card:not(.matched)'));
+
+  const values = unmatchedCards.map(card => card.dataset.value);
+
+  shuffle(values);
+
+  unmatchedCards.forEach((card, index) => {
+    card.dataset.value = values[index];
+    card.querySelector(".back").textContent = values[index];
+  });
+}
+
 // Lida com o clique na carta
 function handleCardClick(e) {
   const card = e.currentTarget;
@@ -89,10 +103,17 @@ function handleCardClick(e) {
       first.classList.add("incorrect");
       second.classList.add("incorrect");
 
-      setTimeout(() => {
+       setTimeout(() => {
         first.classList.remove("flipped", "incorrect");
         second.classList.remove("flipped", "incorrect");
+      }, 500); // tempo só para a animação de desvirar
+      
+      setTimeout(() => {
         flippedCards = [];
+      
+        if (difficulty === "difficult") {
+          reshuffleUnmatchedCards(); // só após a animação de desvirar
+        }
       }, difficulty === "difficult" ? 500 : 1000);  // Tempo varia pela dificuldade
     }
   }
