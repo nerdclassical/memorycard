@@ -4,7 +4,10 @@ MemoryCard é um site interativo criado por mim e meu colega com foco em jogos d
 
 ---
 
-## 🌐 Funcionalidades
+## 🌐 Funcionalidades!
+
+[image](https://github.com/user-attachments/assets/9391a83c-447c-4600-90d4-574d0cc79ce5)
+
 
 - Autenticação com páginas de **Login** e **Registro**
 - Tela de **Menu** com acesso a:
