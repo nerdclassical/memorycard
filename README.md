@@ -85,7 +85,7 @@ MemoryCard é um site interativo criado por mim e meu colega com foco em jogos d
 ## 📸 Prints do Projeto
 
 ### 🖼️ Página Criar Jogo
-![Criar Jogo](assets/prints/criarlogo.png)
+![Criar Jogo](assets/prints/criarJogo.png)
 
 ### 🖼️ Página Inicial
 ![Página Inicial](assets/prints/index.png)
