@@ -13,7 +13,7 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <div class="logoImage"></div>
+            <div class="logoImage">Logo</div>
         </div>
         <div class="buttons">
             <div class="buttonsNav">
@@ -35,32 +35,25 @@
             Ranking
         </div>
         <table border="1">
-        <thead>
-            <tr>
-            <th>Colocação</th>
-            <th>Nome</th>
-            <th>Tentativas</th>
-            <th>Tempo</th>
-            </tr>
-        </thead>
+        
         <tbody>
-            <tr><td>1</td><td>Pedro</td><td>7</td><td>1:45</td></tr>
-            <tr><td>2</td><td>Pedro</td><td>9</td><td>1:46</td></tr>
-            <tr><td>3</td><td>Pedro</td><td>7</td><td>1:51</td></tr>
-            <tr><td>4</td><td>Pedro</td><td>8</td><td>1:53</td></tr>
-            <tr><td>5</td><td>Pedro</td><td>8</td><td>1:59</td></tr>
-            <tr><td>6</td><td>Pedro</td><td>9</td><td>2:01</td></tr>
-            <tr><td>7</td><td>Pedro</td><td>6</td><td>2:05</td></tr>
-            <tr><td>8</td><td>Pedro</td><td>7</td><td>2:11</td></tr>
-            <tr><td>9</td><td>Pedro</td><td>8</td><td>2:12</td></tr>
+            
+            <div id="rankingList"></div>
         </tbody>
         </table>
+       
+        
+
+        
+
 
         <div class="buttonsPart">
             <input type="button" onclick="window.location.href='menu.html';" value="Voltar ao menu" class="btRanking">
             <input type="button" onclick="window.location.href='configuration.html';" value="Criar jogo" class="btRanking">
         </div>
     </section>
+    <script src="../js/ranking.js"></script>
+    
         
 </body>
 </html>

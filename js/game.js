@@ -139,10 +139,44 @@ function handleCardClick(e) {
 
 
 function showWinModal() {
-  clearInterval(timerInterval);  // Para o cronômetro
+  clearInterval(timerInterval);
+
+  // Atualiza tentativas e tempo no modal
   document.getElementById("finalAttempts").textContent = attempts;
   document.getElementById("finalTime").textContent = timerDisplay.textContent;
-  document.getElementById("winModal").classList.add("active");  // Exibe o modal
+  document.getElementById("winModal").classList.add("active");
+
+  // Cálculo da pontuação
+  const timeParts = timerDisplay.textContent.split(":");
+  const totalSeconds = parseInt(timeParts[0]) * 60 + parseInt(timeParts[1]);
+  const basePoints = difficulty === "difficult" ? 300 : 200;
+  const timePenalty = difficulty === "difficult" ? totalSeconds * 1.5 : totalSeconds;
+  const attemptPenalty = attempts * 5;
+
+  const score = Math.max(0, Math.round((basePoints * (cardCount / 2)) - attemptPenalty - timePenalty));
+
+  // Obtém o nome do usuário
+const username = localStorage.getItem("username") || "Desconhecido"; 
+
+  // Recupera e atualiza o ranking
+  const rankingData = JSON.parse(localStorage.getItem("rankingData")) || [];
+
+  rankingData.push({
+    user: username,
+    score: score,
+    attempts: attempts,
+    time: timerDisplay.textContent,
+    difficulty: difficulty,
+    cards: cardCount,
+    date: new Date().toLocaleString()
+  });
+
+  // Ordena por maior pontuação e mantém os 10 melhores
+  rankingData.sort((a, b) => b.score - a.score);
+  const top10 = rankingData.slice(0, 10);
+
+  // Salva no localStorage
+  localStorage.setItem("rankingData", JSON.stringify(top10));
 }
 
 // Inicia o cronômetro
@@ -186,3 +220,31 @@ function startTimer() {
 generateCards();       // Cria as cartas
 startTimer();          // Inicia o cronômetro
 
+document.addEventListener('DOMContentLoaded', function () {
+    const selectUser = document.getElementById('userActions');
+    const username = localStorage.getItem('username');
+
+    if (username) {
+        // Atualiza a primeira opção com o nome do usuário
+        selectUser.options[0].textContent = username;
+    }
+
+    // Evento de mudança no select
+    selectUser.addEventListener('change', function () {
+        if (this.value === 'logout') {
+            alert("Você saiu da sua conta :(");
+            localStorage.removeItem('username'); // Limpa o nome salvo
+            window.location.href = 'index.html'; // Redireciona para a página inicial
+        }
+    });
+});
+
+// js/auth.js
+document.addEventListener('DOMContentLoaded', function () {
+    const username = localStorage.getItem('username');
+
+    if (!username) {
+        // Redireciona para a página de login ou index
+        window.location.href = 'index.html';
+    }
+});

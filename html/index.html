@@ -33,5 +33,16 @@
         </section>
     </div>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const username = localStorage.getItem('username');
+
+    if (username) {
+        // Se estiver logado, redireciona para a página principal
+        window.location.href = 'menu.html';
+    }
+});
+
+    </script>
 </body>
 </html>

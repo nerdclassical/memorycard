@@ -1,21 +1,4 @@
-   function iniciarJogo() {
-        const cardCount = document.getElementById("selectOne").value;
-        const difficulty = document.getElementById("selectTwo").value;
-        const theme = document.getElementById("selectThree").value;
-
-        if(!cardCount || !difficulty || !theme) {
-            alert("Por favor, preencha todos os campos para iniciar o jogo do balacobaco!");
-            return;
-        } else {
-           localStorage.setItem('cardCount', cardCount);
-        localStorage.setItem('difficulty', difficulty);
-        localStorage.setItem('theme', theme);
-
-        window.location.href = 'game.html'; 
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const selectUser = document.getElementById('userActions');
     const username = localStorage.getItem('username');
 
@@ -43,3 +26,4 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'index.html';
     }
 });
+
