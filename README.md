@@ -127,6 +127,12 @@ MemoryCard é um site interativo criado por mim e meu colega com foco em jogos d
 
 ---
 
+## Criadores
+- https://github.com/nerdclassical
+- https://github.com/Pepe2HD
+
+---
+
 ## 🎮 Como usar
 
 1. Clone o repositório:
